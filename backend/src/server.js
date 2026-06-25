@@ -4,6 +4,7 @@ const express=require('express')
 const connectDB=require('./config/db.js')
 const authRoute=require('./routes/authRoutes.js')
 const movieRoute=require("./routes/movieRoutes.js")
+const userRoute=require('./routes/userRoutes.js')
 const app=express()
 
 connectDB()
@@ -13,6 +14,7 @@ app.get("/",(req,res)=>{
 })
 app.use("/api/auth",authRoute)
 app.use('/api/movies',movieRoute)
+app.use('/api/user',userRoute)
 const PORT=Number(process.env.PORT) || 5000
 
 app.listen(PORT,()=>{
