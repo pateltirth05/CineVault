@@ -1,11 +1,11 @@
-const express=require('express')
 const dotenv=require('dotenv')
+dotenv.config();
+const express=require('express')
 const connectDB=require('./config/db.js')
-const authRoute=require('../src/routes/authRoutes.js')
-const movieRoute=require("../src/routes/movieRoutes.js")
+const authRoute=require('./routes/authRoutes.js')
+const movieRoute=require("./routes/movieRoutes.js")
 const app=express()
 
-dotenv.config();
 connectDB()
 app.use(express.json())
 app.get("/",(req,res)=>{

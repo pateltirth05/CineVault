@@ -1,5 +1,5 @@
 const axios=require('axios')
-
+require('dotenv').config()
 const BASE_URL="https://api.themoviedb.org/3";
 
 const tmdb=axios.create({
@@ -9,5 +9,5 @@ const tmdb=axios.create({
         Accept:"application/json",
     },
 })
-
+// console.log("TMDB TOKEN:", process.env.TMDB_ACCESS_TOKEN)
 module.exports=tmdb
