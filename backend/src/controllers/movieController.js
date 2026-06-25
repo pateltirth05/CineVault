@@ -54,4 +54,17 @@ const getSearchMovie=async(req,res)=>{
         res.status(500).json({message:error.message})
     }
 }
-module.exports={getTrendingMovies,getPopularMovies,getTopRatedMovies,getUpcomingMovies,getNowPlaying,getSearchMovie}
+const getMovieDetails=async(req,res)=>{
+    const {id}=req.params;
+     try {
+        
+        if(!id){
+            return res.status(400).json({message:"not found "})
+        }
+        const response=await tmdb.get(`/movie/${id}`)
+        res.status(200).json(response.data)
+    } catch (error) {
+        res.status(500).json({message:error.message})
+    }
+}
+module.exports={getTrendingMovies,getPopularMovies,getTopRatedMovies,getUpcomingMovies,getNowPlaying,getSearchMovie,getMovieDetails}
