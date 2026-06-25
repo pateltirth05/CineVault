@@ -41,4 +41,17 @@ const getNowPlaying=async(req,res)=>{
         res.status(500).json({message:error.message})
     }
 }
-module.exports={getTrendingMovies,getPopularMovies,getTopRatedMovies,getUpcomingMovies,getNowPlaying}
+const getSearchMovie=async(req,res)=>{
+    const {query}=req.query
+    try {
+        
+        if(!query){
+            return res.status(400).json({message:"Search Query is required"})
+        }
+        const response=await tmdb.get('/search/movie',{params:{query}})
+        res.status(200).json(response.data)
+    } catch (error) {
+        res.status(500).json({message:error.message})
+    }
+}
+module.exports={getTrendingMovies,getPopularMovies,getTopRatedMovies,getUpcomingMovies,getNowPlaying,getSearchMovie}
