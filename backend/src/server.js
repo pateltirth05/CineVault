@@ -2,6 +2,7 @@ const express=require('express')
 const dotenv=require('dotenv')
 const connectDB=require('./config/db.js')
 const authRoute=require('../src/routes/authRoutes.js')
+const movieRoute=require("../src/routes/movieRoutes.js")
 const app=express()
 
 dotenv.config();
@@ -11,6 +12,7 @@ app.get("/",(req,res)=>{
     res.send("cinevault backend is running")
 })
 app.use("/api/auth",authRoute)
+app.use('/api/movies',movieRoute)
 const PORT=Number(process.env.PORT) || 5000
 
 app.listen(PORT,()=>{
