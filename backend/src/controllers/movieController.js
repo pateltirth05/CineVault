@@ -9,5 +9,36 @@ const getTrendingMovies = async (req, res) => {
         res.status(500).json({ message: error.message })
     }
 }
-
-module.exports={getTrendingMovies}
+const getPopularMovies=async(req,res)=>{
+    try {
+        const response=await tmdb.get('/movie/popular ')
+         res.status(200).json(response.data)
+    } catch (error) {
+           res.status(500).json({ message: error.message })
+    }
+}
+const getTopRatedMovies=async(req,res)=>{
+    try {
+        const response=await tmdb.get('/movie/top_rated')
+         res.status(200).json(response.data)
+    } catch (error) {
+        res.status(500).json({message:error.message})
+    }
+}
+const getUpcomingMovies=async(req,res)=>{
+     try {
+        const response=await tmdb.get('/movie/upcoming')
+         res.status(200).json(response.data)
+    } catch (error) {
+        res.status(500).json({message:error.message})
+    }
+}
+const getNowPlaying=async(req,res)=>{
+     try {
+        const response=await tmdb.get('/movie/now_playing')
+         res.status(200).json(response.data)
+    } catch (error) {
+        res.status(500).json({message:error.message})
+    }
+}
+module.exports={getTrendingMovies,getPopularMovies,getTopRatedMovies,getUpcomingMovies,getNowPlaying}
