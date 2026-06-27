@@ -6,9 +6,11 @@ const authRoute=require('./routes/authRoutes.js')
 const movieRoute=require("./routes/movieRoutes.js")
 const userRoute=require('./routes/userRoutes.js')
 const reviewRoute=require('./routes/reviewRoutes.js')
+const cors=require('cors')
 const app=express()
 
 connectDB()
+app.use(cors())
 app.use(express.json())
 app.get("/",(req,res)=>{
     res.send("cinevault backend is running")

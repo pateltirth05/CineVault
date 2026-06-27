@@ -7,18 +7,21 @@ import Register from './pages/Register'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import CTABanner from './components/CTABanner'
+import Hero from './components/Hero'
 function App() {
 
   return (
     <>
     <Navbar/>
+ 
+   
    <Routes>
 <Route path='/' element={<Home/>}/>
 <Route path='/login' element={<Login/>}/>
 <Route path='/register' element={<Register/>}/>
 
    </Routes>
-   <CTABanner/>
+   {/* <CTABanner/> */}
    <Footer/>
     </>
   )
