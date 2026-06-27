@@ -135,31 +135,38 @@ await user.save();
     });
     }
 }
-const getFavorite=async(req,res)=>{
-    try {
-        const userId=req.user.id;
+const getFavorite = async (req, res) => {
+  try {
+    const userId = req.user.id;
 
-        const user=await User.findById(userId)
+    const user = await User.findById(userId);
 
-        if(!user){
-            return res.status(404).json({message:"User not found"})
-        }
-
-
-user.favorites.forEach((movieId) => {
-  
-  const response=await Promise.all(user.favorites.map((movieId)=>tmdb.get(`/movie/${movieId}`)))
-
-  const movies=response.map((response)=>response.data)
-});
-    res.status(200).json({success:true,count:movies.length,favorites:movies})
-    } catch (error) {
-         
-      res.status(500).json({
-      message: error.message,
-    });   
+    if (!user) {
+      return res.status(404).json({
+        message: "User not found",
+      });
     }
-}
+
+    const response = await Promise.all(
+      user.favorites.map((movieId) => tmdb.get(`/movie/${movieId}`))
+    );
+
+    const movies = response.map((response) => response.data);
+
+    res.status(200).json({
+      success: true,
+      count: movies.length,
+      favorites: movies,
+    });
+  } catch (error) {
+    console.log(error.response?.data);
+    console.log(error.response?.status);
+
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+};
 
 const removeFromFavorite=async(req,res)=>{
     try {
@@ -214,28 +221,38 @@ const addToWatched=async(req,res)=>{
     res.status(500).json({message:error.message})
   }
 }
-const getWatched=async(req,res)=>{
- try {
-   const {movieId}=req.params;
-   const userId=req.user.id;
- 
-   const user=await User.findById(movieId)
-   if(!user)
-   {
-    return res.status(404).json({message:"User not found"})
-   }
-  user.watched.forEach((movieId)=>{
-    const response=await Promise.all(user.watched.map((movieId)=>tmdb.get(`/movie/${movieId}`)))
-    const movies=response.map((response)=>response.data)
-  })
-   res.status(200).json({success:true,count:movies.length,watched:movies})
- } catch (error) {
-   res.status(500).json({
-      message: error.message,
-    });   
- }
+const getWatched = async (req, res) => {
+  try {
+    const userId = req.user.id;
 
-}
+    const user = await User.findById(userId);
+
+    if (!user) {
+      return res.status(404).json({
+        message: "User not found",
+      });
+    }
+
+    const response = await Promise.all(
+      user.watched.map((movieId) => tmdb.get(`/movie/${movieId}`))
+    );
+
+    const movies = response.map((response) => response.data);
+
+    res.status(200).json({
+      success: true,
+      count: movies.length,
+      watched: movies,
+    });
+  } catch (error) {
+    console.log(error.response?.data);
+    console.log(error.response?.status);
+
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+};
 const removeFromWatched=async(req,res)=>{
   try {
      const {movieId}=req.params
