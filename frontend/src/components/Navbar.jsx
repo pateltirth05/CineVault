@@ -1,5 +1,6 @@
 import React from 'react'
 import '../style/style.css'
+import { Link } from 'react-router-dom'
 const Navbar = () => {
   return (
    <>
@@ -14,7 +15,7 @@ const Navbar = () => {
       <li><a href="recommendations.html" class="navLink">For You</a></li>
       <li><a href="search.html" class="navLink">Discover</a></li>
       <li><a href="watchlist.html" class="navLink">Watchlist</a></li>
-      <li><a href="dashboard.html" class="navLink">Dashboard</a></li>
+      <li><Link to={'/register'}>Register</Link></li>
     </ul>
     <div class="navActions">
       <div class="navSearchWrapper">

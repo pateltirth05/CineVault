@@ -4,7 +4,8 @@ const jwt=require('jsonwebtoken')
 
 const register=async(req,res)=>{
     try {
-        
+        console.log("BODY:", req.body);
+console.log("HEADERS:", req.headers["content-type"]);
         const {name,email,password}=req.body;
         if(!name || !email || !password)
         {
