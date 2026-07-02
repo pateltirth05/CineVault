@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { getTrendingMovies,getMovieDetails } from '../services/movieService'
 import Hero from '../components/Hero'
+import { useAuth } from '../context/AuthContext'
 
 const Home = () => {
 
- 
+ const {user}=useAuth()
   const [movies,setMovies]=useState([])
   useEffect(()=>{
    const fetchMovies=async()=>{
@@ -33,6 +34,8 @@ console.log(heroDetails);
   </>
 ))} */}
 {movies.length > 0 && <Hero movie={movies[0]} />}
+<h1>User Info</h1>
+<h1>Namev:{user?.name}</h1>
 </>
   )
 }

@@ -8,6 +8,8 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import CTABanner from './components/CTABanner'
 import Hero from './components/Hero'
+import ProtectedRoute from './components/ProtectedRoute'
+import PublicRoute from './components/PublicRoute'
 function App() {
 
   return (
@@ -17,9 +19,9 @@ function App() {
  
    
    <Routes>
-<Route path='/' element={<Home/>}/>
-<Route path='/login' element={<Login/>}/>
-<Route path='/register' element={<Register/>}/>
+<Route path='/' element={<ProtectedRoute><Home/></ProtectedRoute>}/>
+<Route path='/login' element={<PublicRoute><Login/></PublicRoute>}/>
+<Route path='/register' element={<PublicRoute><Register/></PublicRoute>}/>
 
    </Routes>
    {/* <CTABanner/> */}

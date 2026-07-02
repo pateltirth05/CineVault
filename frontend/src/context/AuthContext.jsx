@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-
+import api from "../services/api";
 const AuthContext=createContext()
 
 export const AuthProvider=({children})=>{
@@ -15,32 +15,36 @@ export const AuthProvider=({children})=>{
         localStorage.removeItem("token");
         setUser(null)
     }
-    useEffect(()=>{
-        const checkUser =async()=>{
-            try {
-                const token=localStorage.getItem("token")
+    useEffect(() => {
+  console.log("AuthContext mounted");
 
-                if(!token){
-                    setLoading(false)
-                    return;
-                }
-                const response=await api.get("/auth/me",{
-                    headers:{
-                        Authorization:`Bearer ${token}`,
-                    },
-                })
-                setUser(response.data)
-            } catch (error) {
-                localStorage.removeItem("token")
-                setUser(null)
+  const checkUser = async () => {
+    console.log("checkUser started");
 
-            }
-            finally{
-                setLoading(false)
-            }
-        }
-        checkUser()
-    },[])
+    const token = localStorage.getItem("token");
+    console.log("Token:", token);
+
+    try {
+      const response = await api.get("/auth/me", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      console.log("Response:", response.data);
+
+      setUser(response.data);
+    } catch (error) {
+      console.log("ERROR:", error);
+      console.log("STATUS:", error.response?.status);
+      console.log("DATA:", error.response?.data);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  checkUser();
+}, []);
     return(
         <AuthContext.Provider value={{user,loading,login,logout}}>{children}</AuthContext.Provider>
     )
