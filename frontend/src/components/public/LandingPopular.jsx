@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react'
 import "../public/style/Landingnavbar.css"
 import "../../style/style.css"
 import { getPopularMovies } from '../../services/movieService';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 const LandingPopular = () => {
     const [movies,setMovie]=useState([]);
+    const navigate=useNavigate()
     useEffect(()=>{
         const fetchMovies=async()=>{
              try {
@@ -41,7 +42,7 @@ const LandingPopular = () => {
 
           <div className="movieCardOverlay">
             <div className="movieCardActions">
-              <button className="btnPrimary btnSm">
+              <button className="btnPrimary btnSm" onClick={()=>navigate(`/movie/${movie.id}`)} >
                 <i className="fa fa-info-circle"></i> Details
               </button>
             </div>

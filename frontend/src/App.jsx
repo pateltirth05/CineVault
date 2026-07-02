@@ -9,6 +9,7 @@ import Hero from './components/Hero'
 import ProtectedRoute from './components/ProtectedRoute'
 import PublicRoute from './components/PublicRoute'
 import Landing from './pages/Landing'
+import MovieDetails from './pages/MovieDetails'
 function App() {
 
   return (
@@ -22,6 +23,7 @@ function App() {
 <Route path='/login' element={<PublicRoute><Login/></PublicRoute>}/>
 <Route path='/register' element={<PublicRoute><Register/></PublicRoute>}/>
 <Route path='/' element={<PublicRoute><Landing/></PublicRoute>}/>
+<Route path='/movie/:id' element={<MovieDetails/>}/>
    </Routes>
    {/* <CTABanner/> */}
   

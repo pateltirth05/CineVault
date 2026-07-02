@@ -12,7 +12,7 @@ const Landingnavbar = () => {
       CineVault
     </Link>
     <ul class="navLinks">
-      <li><Link to="/landing" class="navLink navLinkActive">Home</Link></li>
+      <li><Link to="/" class="navLink navLinkActive">Home</Link></li>
       <li><Link to="/discover" class="navLink">Discover</Link></li>
       <li><Link to="/popular" class="navLink">Popular</Link></li>
       <li><Link to="/trending" class="navLink">Trending</Link></li>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "../public/style/Landingnavbar.css"
 import "../../style/style.css"
 import { getTrendingMovies } from '../../services/movieService'
+import { Link } from 'react-router-dom'
 const LandingTrending = () => {
     const [movies,setMovie]=useState([])
     useEffect(()=>{
@@ -62,8 +63,8 @@ const LandingTrending = () => {
 
           <div className="movieCardOverlay">
             <div className="movieCardActions">
-              <button className="btnPrimary btnSm">
-                <i className="fa fa-info-circle"></i> Details
+              <button className="btnPrimary btnSm" >
+                <i className="fa fa-info-circle"></i> <Link to={`/movie/${movie.id}`}>Details</Link>
               </button>
             </div>
           </div>

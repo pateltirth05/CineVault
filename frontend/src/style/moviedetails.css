@@ -1,0 +1,520 @@
+/* ── movie-detail.css ── */
+
+/* Hero */
+.detailHero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.detailHeroBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.detailHeroBg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detailHeroOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to right,
+    rgba(10, 10, 15, 0.98) 40%,
+    rgba(10, 10, 15, 0.7) 70%,
+    rgba(10, 10, 15, 0.3) 100%
+  ),
+  linear-gradient(to top, rgba(10, 10, 15, 1) 0%, transparent 50%);
+}
+
+.detailHeroContent {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 3rem;
+  padding-top: 7rem;
+}
+
+.detailHeroInner {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 2.5rem;
+  align-items: flex-end;
+}
+
+/* Poster */
+.detailPosterWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detailPoster {
+  width: 100%;
+  border-radius: var(--radius);
+  border: 2px solid var(--borderGold);
+  box-shadow: var(--shadowGold);
+  aspect-ratio: 2/3;
+  object-fit: cover;
+}
+
+.detailWatchBtn {
+  border-radius: var(--radiusSm);
+  justify-content: center;
+}
+
+.detailPosterScore {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(155, 89, 182, 0.15);
+  border: 1px solid rgba(155, 89, 182, 0.3);
+  border-radius: var(--radiusSm);
+  padding: 0.6rem 1rem;
+}
+
+.detailScoreLabel {
+  font-size: 0.75rem;
+  color: var(--textMuted);
+}
+
+.detailScoreValue {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #9B59B6;
+  font-size: 1rem;
+}
+
+/* Info */
+.detailInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.detailEyebrow {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.detailTitle {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.detailMeta {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  color: var(--textMuted);
+}
+
+.detailMetaItem {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.detailRating {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.detailDesc {
+  font-size: 0.95rem;
+  color: var(--textMuted);
+  line-height: 1.75;
+  max-width: 560px;
+}
+
+.detailCredits {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detailCredit {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.875rem;
+}
+
+.detailCreditLabel {
+  color: var(--textDim);
+  min-width: 80px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.detailCreditValue {
+  color: var(--textPrimary);
+}
+
+.detailActionRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.detailSocialBtn {
+  width: 40px;
+  height: 40px;
+}
+
+.detailUserRating {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: 0.5rem;
+}
+
+.detailStars {
+  display: flex;
+  gap: 0.15rem;
+}
+
+.detailStarBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--textDim);
+  font-size: 0.85rem;
+  transition: var(--transition);
+  padding: 0.1rem;
+}
+
+.detailStarBtn:hover,
+.detailStarActive {
+  color: var(--gold);
+}
+
+/* Body */
+.detailBody {
+  padding: 2rem 0 5rem;
+}
+
+.detailTabContent {
+  margin-top: 0.5rem;
+}
+
+/* Overview */
+.detailOverviewGrid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 2.5rem;
+  margin-top: 1rem;
+}
+
+.detailBlock {
+  margin-bottom: 2rem;
+}
+
+.detailBlockTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.detailBlockTitleMt {
+  margin-top: 2rem;
+}
+
+.detailBlockText {
+  color: var(--textMuted);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.detailDetailGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.detailDetailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.875rem;
+}
+
+.detailDetailLabel {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--textDim);
+  font-weight: 600;
+}
+
+.detailGenrePills {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Ratings */
+.detailRatingsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.detailRatingCard {
+  background: var(--bgElevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radiusSm);
+  padding: 1rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.detailRatingCard:hover {
+  border-color: var(--borderGold);
+}
+
+.detailRatingCv {
+  background: rgba(232, 185, 79, 0.06);
+  border-color: var(--borderGold);
+}
+
+.detailRatingSource {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--textDim);
+  margin-bottom: 0.35rem;
+}
+
+.detailRatingScore {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.detailRatingCount {
+  font-size: 0.72rem;
+  color: var(--textDim);
+  margin-top: 0.2rem;
+}
+
+/* Streaming */
+.detailStreamGrid {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.detailStreamItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: var(--textMuted);
+  cursor: pointer;
+}
+
+.detailStreamLogo {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.detailStreamLogo:hover {
+  border-color: var(--borderGold);
+}
+
+.detailMax { background: #002BE0; color: #fff; }
+.detailPrime { background: #00A8E0; color: #fff; font-size: 0.6rem; }
+.detailApple { background: #1C1C1E; color: #fff; font-size: 1.4rem; }
+
+/* Cast */
+.detailCastRow {
+  gap: 1.5rem;
+}
+
+/* Reviews */
+.detailReviewsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.detailReviewList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.detailReview {
+  background: var(--bgCard);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: var(--transition);
+}
+
+.detailReview:hover {
+  border-color: var(--borderGold);
+}
+
+.detailReviewHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.detailReviewRating {
+  margin-left: auto;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.detailReviewFooter {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* Media */
+.detailMediaGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.detailTrailerCard {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  cursor: pointer;
+}
+
+.detailTrailerCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.detailTrailerCard:hover img {
+  transform: scale(1.04);
+}
+
+.detailTrailerOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 15, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.detailPlayBtn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(232, 185, 79, 0.9);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #0A0A0F;
+  transition: var(--transition);
+}
+
+.detailPlayBtn:hover {
+  transform: scale(1.1);
+  background: var(--gold);
+}
+
+.detailTrailerLabel {
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.detailStillsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.detailStill {
+  border-radius: var(--radiusSm);
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.detailStill:hover {
+  transform: scale(1.02);
+}
+
+.detailStill img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .detailHeroInner {
+    grid-template-columns: 1fr;
+  }
+  .detailPosterWrap {
+    display: none;
+  }
+  .detailOverviewGrid {
+    grid-template-columns: 1fr;
+  }
+  .detailMediaGrid {
+    grid-template-columns: 1fr;
+  }
+  .detailStillsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .detailRatingsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .detailStillsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
