@@ -15,7 +15,7 @@ function App() {
   return (
     <>
     
-    <Navbar/>
+  
  
    
    <Routes>
@@ -25,7 +25,7 @@ function App() {
 
    </Routes>
    {/* <CTABanner/> */}
-   <Footer/>
+  
     </>
   )
 }

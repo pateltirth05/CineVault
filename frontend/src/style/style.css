@@ -621,3 +621,70 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     .reviewStars { color: var(--gold); font-size: 0.85rem; margin-bottom: 0.75rem; }
     .reviewText { font-size: 0.875rem; color: var(--textMuted); line-height: 1.7; }
   
+
+
+     .authPage {
+      min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr;
+    }
+    .authBg {
+      position: relative; overflow: hidden;
+    }
+    .authBg img { width:100%; height:100%; object-fit:cover; }
+    .authBgOverlay {
+      position:absolute; inset:0;
+      background: linear-gradient(135deg, rgba(10,10,15,0.7) 0%, rgba(10,10,15,0.3) 100%);
+      display: flex; flex-direction:column; justify-content:space-between; padding:3rem;
+    }
+    .authBgQuote {
+      max-width: 400px; margin-top: auto;
+    }
+    .authBgQuote blockquote {
+      font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:600;
+      line-height:1.4; color:#fff; margin-bottom:1rem;
+    }
+    .authBgQuote cite { font-size:0.85rem; color:rgba(255,255,255,0.6); }
+    .authPanel {
+      display: flex; flex-direction:column; justify-content:center; align-items:center;
+      padding: 3rem 2rem; background: var(--bg);
+    }
+    .authCard { width:100%; max-width:420px; }
+    .authHeader { text-align:center; margin-bottom:2.5rem; }
+    .authTitle { font-family:'Playfair Display',serif; font-size:2rem; font-weight:700; margin-bottom:0.5rem; }
+    .authSubtitle { color:var(--textMuted); font-size:0.9rem; }
+    .forgotLink { font-size:0.8rem; color:var(--gold); text-align:right; display:block; margin-top:0.35rem; transition:var(--transition); }
+    .forgotLink:hover { color:var(--goldDim); }
+    .authFooter { text-align:center; margin-top:2rem; font-size:0.875rem; color:var(--textMuted); }
+    .authFooter a { color:var(--gold); }
+    .authFooter a:hover { text-decoration:underline; }
+    @media(max-width:768px) {
+      .authPage { grid-template-columns:1fr; }
+      .authBg { display:none; }
+    }
+    .authPage { min-height:100vh; display:grid; grid-template-columns:1fr 1fr; }
+    .authBg { position:relative; overflow:hidden; }
+    .authBg img { width:100%; height:100%; object-fit:cover; }
+    .authBgOverlay {
+      position:absolute;inset:0;
+      background:linear-gradient(135deg,rgba(10,10,15,0.7),rgba(10,10,15,0.3));
+      display:flex;flex-direction:column;justify-content:space-between;padding:3rem;
+    }
+    .authPanel { display:flex;flex-direction:column;justify-content:center;align-items:center;padding:3rem 2rem;background:var(--bg);overflow-y:auto; }
+    .authCard { width:100%;max-width:440px; }
+    .authHeader { text-align:center;margin-bottom:2rem; }
+    .authTitle { font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;margin-bottom:0.5rem; }
+    .authSubtitle { color:var(--textMuted);font-size:0.9rem; }
+    .genrePickerGrid { display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem;margin-top:0.75rem; }
+    .genrePicker {
+      padding:0.5rem;border-radius:var(--radiusSm);background:var(--bgCard);
+      border:1px solid var(--border);font-size:0.75rem;font-weight:500;
+      color:var(--textMuted);cursor:pointer;transition:var(--transition);text-align:center;
+    }
+    .genrePicker:hover { border-color:var(--borderGold);color:var(--gold); }
+    .genrePickerActive { background:rgba(232,185,79,0.1);border-color:var(--gold);color:var(--gold); }
+    .strengthBar { height:3px;border-radius:2px;margin-top:0.5rem;background:var(--bgElevated);overflow:hidden; }
+    .strengthFill { height:100%;border-radius:2px;transition:width 0.4s,background 0.4s; }
+    .authFooter { text-align:center;margin-top:1.5rem;font-size:0.875rem;color:var(--textMuted); }
+    .authFooter a { color:var(--gold); }
+    .twoCol { display:grid;grid-template-columns:1fr 1fr;gap:1rem; }
+    @media(max-width:768px) { .authPage{grid-template-columns:1fr}.authBg{display:none}.twoCol{grid-template-columns:1fr} }
+ 
