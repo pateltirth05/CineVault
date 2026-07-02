@@ -10,6 +10,7 @@ import CTABanner from './components/CTABanner'
 import Hero from './components/Hero'
 import ProtectedRoute from './components/ProtectedRoute'
 import PublicRoute from './components/PublicRoute'
+import Landing from './pages/Landing'
 function App() {
 
   return (
@@ -19,10 +20,10 @@ function App() {
  
    
    <Routes>
-<Route path='/' element={<ProtectedRoute><Home/></ProtectedRoute>}/>
+<Route path='/home' element={<ProtectedRoute><Home/></ProtectedRoute>}/>
 <Route path='/login' element={<PublicRoute><Login/></PublicRoute>}/>
 <Route path='/register' element={<PublicRoute><Register/></PublicRoute>}/>
-
+<Route path='/' element={<PublicRoute><Landing/></PublicRoute>}/>
    </Routes>
    {/* <CTABanner/> */}
   

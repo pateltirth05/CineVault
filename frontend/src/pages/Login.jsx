@@ -32,7 +32,7 @@ const Login = () => {
 
       login(data.user, data.token);
 
-      navigate("/");
+      navigate("/home");
     } catch (error) {
       alert(error.response?.data?.message || "Login Failed");
     }
