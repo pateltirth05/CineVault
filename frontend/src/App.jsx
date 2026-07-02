@@ -12,6 +12,7 @@ import Landing from './pages/Landing'
 import MovieDetails from './pages/MovieDetails'
 import Upcoming from './pages/Upcoming'
 import Popular from './pages/Popular'
+import Trending from './pages/Trending'
 function App() {
 
   return (
@@ -28,6 +29,7 @@ function App() {
 <Route path='/movie/:id' element={<MovieDetails/>}/>
 <Route path='/upcoming' element={<Upcoming/>}/>
 <Route path='/popular' element={<Popular/>}/>
+<Route path='/trending' element={<Trending/>}/>
    </Routes>
    {/* <CTABanner/> */}
   
