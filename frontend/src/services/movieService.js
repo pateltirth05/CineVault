@@ -23,3 +23,7 @@ export const getMovieTrailer=async(id)=>{
     return response.data
 }
 
+export const getUpcomingMovie=async()=>{
+     const response=await api.get("/movies/upcoming")
+    return response.data
+}

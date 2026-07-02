@@ -1,0 +1,138 @@
+/* ============================================================
+   CineVault — Authenticated Home Page Styles
+   Classes: camelCase, no dashes, no spaces
+   Depends on: style.css (global)
+   ============================================================ */
+
+/* ── Spotlight Hero (rotating featured titles) ── */
+.spotlightSection { position: relative; }
+.spotlightSlider { position: relative; height: 100vh; min-height: 600px; overflow: hidden; }
+.spotlightSlide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.8s ease; }
+.spotlightSlideActive { opacity: 1; }
+.spotlightSlide .heroBg img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ── Featured Row (editor's picks + ranked list) ── */
+.editorsPicksLayout { display: grid; grid-template-columns: 1fr 400px; gap: 2.5rem; align-items: start; }
+.featuredRow { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.featuredCardBig {
+  background: var(--bgCard); border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden; position: relative;
+  min-height: 360px; cursor: pointer; transition: var(--transition);
+}
+.featuredCardBig:hover { border-color: var(--borderGold); }
+.featuredCardBig img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+.featuredCardBigOverlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,10,15,0.95) 0%, transparent 60%);
+}
+.featuredCardBigContent { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; }
+.featuredCardSmList { display: flex; flex-direction: column; gap: 1rem; }
+.featuredCardSm {
+  display: flex; gap: 1rem; background: var(--bgCard);
+  border: 1px solid var(--border); border-radius: var(--radiusSm);
+  overflow: hidden; transition: var(--transition); cursor: pointer; flex: 1;
+}
+.featuredCardSm:hover { border-color: var(--borderGold); }
+.featuredCardSmPoster { width: 80px; flex-shrink: 0; }
+.featuredCardSmPoster img { width: 100%; height: 100%; object-fit: cover; }
+.featuredCardSmBody { padding: 0.75rem 0.75rem 0.75rem 0; display: flex; flex-direction: column; justify-content: center; gap: 0.35rem; }
+.featuredCardSmTitle { font-size: 0.9rem; font-weight: 600; }
+.top10List { display: flex; flex-direction: column; gap: 0.75rem; }
+
+/* ── Genre Explorer ── */
+.genreGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; }
+.genreCard {
+  aspect-ratio: 16/9; border-radius: var(--radius); overflow: hidden;
+  position: relative; cursor: pointer; transition: var(--transition);
+}
+.genreCard:hover { transform: scale(1.03); }
+.genreCard img { width: 100%; height: 100%; object-fit: cover; }
+.genreCardOverlay {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.4rem;
+}
+.genreCardTitle { font-weight: 700; font-size: 0.95rem; text-align: center; }
+.genreCardCount { font-size: 0.75rem; color: rgba(255,255,255,0.6); }
+
+/* ── Trending Rank List ── */
+.trendingItem {
+  display: flex; align-items: center; gap: 1.25rem;
+  padding: 1rem; background: var(--bgCard); border: 1px solid var(--border);
+  border-radius: var(--radiusSm); transition: var(--transition); cursor: pointer;
+}
+.trendingItem:hover { border-color: var(--borderGold); }
+.trendingRank {
+  font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900;
+  color: var(--textDim); min-width: 40px; line-height: 1;
+}
+.trendingRankHot { color: var(--crimson); }
+.trendingPoster { width: 56px; height: 80px; border-radius: var(--radiusSm); overflow: hidden; flex-shrink: 0; }
+.trendingBody { flex: 1; }
+.trendingTitle { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.3rem; }
+.trendingMeta { display: flex; align-items: center; gap: 0.75rem; font-size: 0.8rem; color: var(--textMuted); }
+.trendingTrend { font-size: 0.8rem; color: #2ECC71; display: flex; align-items: center; gap: 0.2rem; }
+
+/* ── Recommended For You (personalized rail) ── */
+.recommendedSection { background: linear-gradient(180deg, transparent, rgba(232,185,79,0.04), transparent); }
+.recommendedReason {
+  display: flex; align-items: center; gap: 0.4rem;
+  font-size: 0.75rem; color: var(--textMuted); margin-top: 0.4rem;
+}
+
+/* ── Upcoming Releases ── */
+.upcomingCard {
+  background: var(--bgCard); border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden; transition: var(--transition);
+  display: flex; flex-direction: column;
+}
+.upcomingCard:hover { border-color: var(--borderGold); }
+.upcomingCardBanner { height: 160px; overflow: hidden; position: relative; }
+.upcomingCardBanner img { width: 100%; height: 100%; object-fit: cover; }
+.upcomingCountdown {
+  position: absolute; top: 0.75rem; right: 0.75rem;
+  background: var(--glass); backdrop-filter: blur(12px);
+  border: 1px solid var(--border); border-radius: var(--radiusSm);
+  padding: 0.35rem 0.7rem; font-size: 0.75rem; font-weight: 600; color: var(--gold);
+}
+.upcomingCardBody { padding: 1rem; flex: 1; display: flex; flex-direction: column; gap: 0.5rem; }
+.upcomingCardTitle { font-weight: 600; font-size: 0.95rem; }
+
+/* ── Reviews ── */
+.reviewCard {
+  background: var(--bgCard); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.5rem;
+  min-width: 300px; flex-shrink: 0; transition: var(--transition);
+}
+.reviewCard:hover { border-color: var(--borderGold); }
+.reviewHeader { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+.reviewAvatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--crimson));
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; flex-shrink: 0;
+}
+.reviewName { font-weight: 600; font-size: 0.95rem; }
+.reviewMovie { font-size: 0.8rem; color: var(--textMuted); }
+.reviewStars { color: var(--gold); font-size: 0.85rem; margin-bottom: 0.75rem; }
+.reviewText { font-size: 0.875rem; color: var(--textMuted); line-height: 1.7; }
+
+/* ── Rate-to-improve CTA Banner ── */
+.rateCta {
+  background: linear-gradient(135deg, rgba(232,185,79,0.08), rgba(192,57,43,0.08));
+  border: 1px solid var(--borderGold); border-radius: var(--radiusLg);
+  padding: 4rem; text-align: center;
+}
+.rateCtaTitle { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; margin-bottom: 1rem; }
+.rateCtaDesc { max-width: 500px; margin: 0 auto 2rem; }
+
+/* ── Cast Row ── */
+.castRowItem { min-width: 130px; flex-shrink: 0; }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .editorsPicksLayout { grid-template-columns: 1fr; }
+  .featuredRow { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .rateCta { padding: 2.5rem 1.5rem; }
+}

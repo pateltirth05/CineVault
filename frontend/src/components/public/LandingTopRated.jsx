@@ -4,8 +4,10 @@ import "../../style/style.css"
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { getTopRatedMovies } from '../../services/movieService';
+import { useNavigate } from 'react-router-dom';
 const LandingTopRated = () => {
      const [movies,setMovie]=useState([]);
+     const navigate=useNavigate()
         useEffect(()=>{
             const fetchMovies=async()=>{
                  try {
@@ -45,7 +47,7 @@ const LandingTopRated = () => {
 
     <div className="landingTopRatedGrid">
       {movies.slice(0,6).map((movie, index) => (
-        <div className="landingTopRatedItem" key={movie.id}>
+        <div className="landingTopRatedItem" key={movie.id} onClick={()=>navigate(`/movie/${movie.id}`)}>
           <span className="landingTopRatedRank">
             {String(index + 1).padStart(2, "0")}
           </span>

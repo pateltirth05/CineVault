@@ -10,6 +10,8 @@ import ProtectedRoute from './components/ProtectedRoute'
 import PublicRoute from './components/PublicRoute'
 import Landing from './pages/Landing'
 import MovieDetails from './pages/MovieDetails'
+import Upcoming from './pages/Upcoming'
+import Popular from './pages/Popular'
 function App() {
 
   return (
@@ -24,6 +26,8 @@ function App() {
 <Route path='/register' element={<PublicRoute><Register/></PublicRoute>}/>
 <Route path='/' element={<PublicRoute><Landing/></PublicRoute>}/>
 <Route path='/movie/:id' element={<MovieDetails/>}/>
+<Route path='/upcoming' element={<Upcoming/>}/>
+<Route path='/popular' element={<Popular/>}/>
    </Routes>
    {/* <CTABanner/> */}
   
