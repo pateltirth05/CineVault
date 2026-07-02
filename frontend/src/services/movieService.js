@@ -9,3 +9,7 @@ export const getMovieDetails=async(movieId)=>{
     return response.data
 
 }
+export const getPopularMovies=async()=>{
+    const response=await api.get("/movies/popular")
+    return response.data
+}

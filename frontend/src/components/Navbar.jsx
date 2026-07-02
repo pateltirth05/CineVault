@@ -8,18 +8,19 @@ import { useNavigate
 const Navbar = () => {
    const {logout}=useAuth()
     const navigate=useNavigate()
-  
+    
     const handleLogout=()=>{
       logout();
       navigate("/")
     }
+
   return (
    <>
    <nav class="navbar" id="navbar">
   <div class="navInner">
     <a href="index.html" class="navLogo">
       <div class="navLogoIcon">🎬</div>
-      CineVault
+      CinVault
     </a>
     <ul class="navLinks">
       <li><a href="index.html" class="navLink navLinkActive">Home</a></li>
@@ -27,6 +28,7 @@ const Navbar = () => {
       <li><a href="search.html" class="navLink">Discover</a></li>
       <li><a href="watchlist.html" class="navLink">Watchlist</a></li>
       <li><Link to={'/register'}>Register</Link></li>
+   
       <button onClick={handleLogout} style={{color:"white"}}>Logout</button>
     </ul>
     <div class="navActions">

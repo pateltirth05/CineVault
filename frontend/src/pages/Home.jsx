@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { getTrendingMovies,getMovieDetails } from '../services/movieService'
 import Hero from '../components/Hero'
 import { useAuth } from '../context/AuthContext'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+
 
 const Home = () => {
 
@@ -35,11 +34,11 @@ console.log(heroDetails);
   <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} style={{width:'150px',height:"250px"}}/>
   </>
 ))} */}
-<Navbar/>
+
 {movies.length > 0 && <Hero movie={movies[0]} />}
 <h1>User Info</h1>
 <h1>Namev:{user?.name}</h1>
-<Footer/>
+
 </>
   )
 }
