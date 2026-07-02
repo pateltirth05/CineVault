@@ -13,3 +13,7 @@ export const getPopularMovies=async()=>{
     const response=await api.get("/movies/popular")
     return response.data
 }
+export const getTopRatedMovies=async()=>{
+    const response=await api.get("/movies/top-rated")
+    return response.data
+}
