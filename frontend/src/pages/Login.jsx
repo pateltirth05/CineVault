@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { loginUser } from '../services/authService'
 import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext'
 
 const Login = () => {
   const navigate=useNavigate()
+  const { login }=useAuth()
   const [formData,setFormData]=useState({
     email:"",
     password:""
@@ -20,10 +22,11 @@ const Login = () => {
     try {
       const data=await loginUser(formData)
       console.log(data)
-      localStorage.setItem("token",data.token)
+      login(data.user,data.token)
+      // localStorage.setItem("token",data.token)
       navigate("/")
     } catch (error) {
-      console.log(error.response?.data)
+      alert(error.response?.data?.message || "Login Failed")
     }
   }
   return (

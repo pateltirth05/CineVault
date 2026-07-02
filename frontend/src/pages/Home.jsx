@@ -3,6 +3,8 @@ import { getTrendingMovies,getMovieDetails } from '../services/movieService'
 import Hero from '../components/Hero'
 
 const Home = () => {
+
+ 
   const [movies,setMovies]=useState([])
   useEffect(()=>{
    const fetchMovies=async()=>{
