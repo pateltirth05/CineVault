@@ -18,7 +18,12 @@ export const getTopRatedMovies=async()=>{
     return response.data
 }
 
-export const getMovieTrailer=async()=>{
-    const response=await api.get("/movies/upcoming")
+export const getMovieTrailer=async(id)=>{
+    const response=await api.get(`/movies/${id}/videos`)
+    return response.data
+}
+
+export const getMovieDetails=async(id)=>{
+    const response=await api.get(`/movies/${id}`)
     return response.data
 }

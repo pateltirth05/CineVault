@@ -13,9 +13,10 @@ const Landingnavbar = () => {
     </Link>
     <ul class="navLinks">
       <li><Link to="/landing" class="navLink navLinkActive">Home</Link></li>
-      <li><Link to="/search.html" class="navLink">Movies</Link></li>
-      <li><Link to="/search.html?section=toprated" class="navLink">Top Rated</Link></li>
-      <li><Link to="/search.html?section=upcoming" class="navLink">Upcoming</Link></li>
+      <li><Link to="/discover" class="navLink">Discover</Link></li>
+      <li><Link to="/popular" class="navLink">Popular</Link></li>
+      <li><Link to="/trending" class="navLink">Trending</Link></li>
+      <li><Link to="/upcoming" class="navLink">Upcoming</Link></li>
     </ul>
     <div class="navActions">
       <Link to="/login" class="btnGhost">Log In</Link>

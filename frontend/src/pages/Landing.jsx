@@ -8,6 +8,7 @@ import LandingTrending from '../components/public/LandingTrending'
 import LandingPopular from '../components/public/LandingPopular'
 import LandingGenre from '../components/public/LandingGenre'
 import LandingTopRated from '../components/public/LandingTopRated'
+import LandingTrailer from '../components/public/LandingTrailer'
 
 const Landing = () => {
   return (
@@ -17,6 +18,7 @@ const Landing = () => {
    <LandingTrending/>
    <LandingPopular/>
    <LandingTopRated/>
+   <LandingTrailer/>
    <LandingGenre/>
    <JoinCTA/>
    <LandingFooter/>
