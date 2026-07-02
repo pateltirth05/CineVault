@@ -37,7 +37,7 @@ const navigate=useNavigate()
             <h2 className="sectionTitle">Popular Movies</h2>
 
             <p className="sectionSubtitle">
-              Discover the movies everyone is watching right now.
+              Most loved movies by audiences around the world.
             </p>
           </div>
         </div>

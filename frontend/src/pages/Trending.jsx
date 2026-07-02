@@ -66,6 +66,9 @@ const navigate=useNavigate()
                   <p className="upcomingCardTitle">
                     {movies.title}
                   </p>
+                    <span  style={{color:"gray",fontSize:"12px"}}>
+                    {movies.overview.slice(0,100)}
+                  </span>
 
                   <button className="btnGhost btnSm mt1" onClick={()=>navigate(`/movie/${movies.id}`)} >
                      <i className="fa fa-info-circle"></i> Details
