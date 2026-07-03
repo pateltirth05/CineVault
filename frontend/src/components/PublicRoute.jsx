@@ -9,7 +9,7 @@ const PublicRoute = ({children}) => {
         return <h2>Loading..</h2>
     }
     if(user){
-        return <Navigate to='/' replace/>
+        return <Navigate to='/home' replace/>
     }
   return children
 }

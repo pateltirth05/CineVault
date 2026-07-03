@@ -49,7 +49,7 @@ const Login = () => {
 
         <div className="authBgOverlay">
           <Link
-            to="/"
+            to="/landing"
             className="navLogo"
             style={{
               display: "flex",

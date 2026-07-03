@@ -26,10 +26,10 @@ function App() {
 <Route path='/login' element={<PublicRoute><Login/></PublicRoute>}/>
 <Route path='/register' element={<PublicRoute><Register/></PublicRoute>}/>
 <Route path='/' element={<PublicRoute><Landing/></PublicRoute>}/>
-<Route path='/movie/:id' element={<MovieDetails/>}/>
-<Route path='/upcoming' element={<Upcoming/>}/>
-<Route path='/popular' element={<Popular/>}/>
-<Route path='/trending' element={<Trending/>}/>
+<Route path='/movie/:id' element={<PublicRoute><MovieDetails/></PublicRoute>}/>
+<Route path='/upcoming' element={<PublicRoute><Upcoming/></PublicRoute>}/>
+<Route path='/popular' element={<PublicRoute><Popular/></PublicRoute>}/>
+<Route path='/trending' element={<PublicRoute><Trending/></PublicRoute>}/>
    </Routes>
    {/* <CTABanner/> */}
   
