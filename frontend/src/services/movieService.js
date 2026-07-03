@@ -27,3 +27,8 @@ export const getUpcomingMovie=async()=>{
      const response=await api.get("/movies/upcoming")
     return response.data
 }
+
+export const searchMovies = async (query) => {
+    const response = await api.get(`/movies/search?query=${query}`);
+    return response.data;
+};

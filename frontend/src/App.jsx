@@ -13,6 +13,7 @@ import MovieDetails from './pages/MovieDetails'
 import Upcoming from './pages/Upcoming'
 import Popular from './pages/Popular'
 import Trending from './pages/Trending'
+import Discover from './pages/Discover'
 function App() {
 
   return (
@@ -30,6 +31,7 @@ function App() {
 <Route path='/upcoming' element={<PublicRoute><Upcoming/></PublicRoute>}/>
 <Route path='/popular' element={<PublicRoute><Popular/></PublicRoute>}/>
 <Route path='/trending' element={<PublicRoute><Trending/></PublicRoute>}/>
+<Route path='/discover' element={<PublicRoute><Discover/></PublicRoute>}/>
    </Routes>
    {/* <CTABanner/> */}
   

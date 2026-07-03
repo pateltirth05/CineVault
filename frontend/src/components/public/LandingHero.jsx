@@ -2,10 +2,19 @@ import React, { useEffect, useState } from 'react'
 import "../public/style/Landingnavbar.css"
 import "../../style/style.css"
 import { getPopularMovies } from '../../services/movieService'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 const LandingHero = () => {
 
     const [movie,setMovie]=useState([])
+    const [search,setSearch]=useState("")
+    const navigate=useNavigate()
+
+    const handleSearch=()=>{
+      if(!search.trim()){
+       return;
+      }
+       navigate(`/discover?q=${encodeURIComponent(search)}`)
+    }
     useEffect(()=>{
      const fetchMovie=async()=>{
         try {
@@ -32,8 +41,8 @@ const LandingHero = () => {
       <p class="landingHeroDesc">Search across thousands of titles — get details, cast, trailers, and ratings powered by TMDB.</p>
       <div class="landingSearchBar">
         <i class="fa fa-search landingSearchIcon"></i>
-        <input type="text" id="heroSearch" class="landingSearchInput" placeholder="Search for a movie, actor, director..." autocomplete="off" />
-        <button class="landingSearchBtn" >Search</button>
+        <input type="text" id="heroSearch" class="landingSearchInput" placeholder="Search for a movie, actor, director..." autocomplete="off" value={search} onChange={(e)=>setSearch(e.target.value)}/>
+        <button class="landingSearchBtn" onClick={handleSearch}>Search</button>
       </div>
       <div class="landingHeroTags">
         <span class="landingHeroTagLabel">Popular:</span>
