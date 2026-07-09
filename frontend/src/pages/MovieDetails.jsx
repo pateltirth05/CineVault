@@ -9,6 +9,7 @@ import LandingFooter from '../components/public/LandingFooter'
 import MovieHero from '../components/MovieHero'
 import "../style/style.css"
 import "../style/moviedetails.css"
+import "../style/Locked.css"
 import MovieTabs from '../components/MovieTabs'
 import LockedMovieContent from '../components/public/LockedMovieContent'
 const MovieDetails = () => {

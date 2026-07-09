@@ -33,13 +33,33 @@ const MovieHero = ({ movie }) => {
                 <i className="fa fa-play"></i> Watch Trailer
               </button>
 
-              <button className="btnSecondary btnFull">
-                <i className="fa fa-bookmark"></i> Watchlist
-              </button>
+           <button className="btnSecondary btnFull lockedBtn">
 
-              <button className="btnGhost btnFull">
-                <i className="fa fa-heart"></i> Favorite
-              </button>
+    <span className="lockedContents">
+        <i className="fa fa-bookmark"></i>
+        Watchlist
+    </span>
+
+    <span className="lockBadge">
+        <i className="fa-solid fa-lock"></i>
+        Locked
+    </span>
+
+</button>
+
+             <button className="btnGhost btnFull lockedBtn">
+
+    <span className="lockedContent">
+        <i className="fa fa-heart"></i>
+        Watchlist
+    </span>
+
+    <span className="lockBadge">
+        <i className="fa-solid fa-lock"></i>
+        Locked
+    </span>
+
+</button>
             </div>
 
             <div className="detailPosterScore">

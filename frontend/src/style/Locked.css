@@ -23,3 +23,32 @@
 
     padding:80px 20px;
 }
+.lockedBtn{
+    position: relative;
+    overflow: hidden;
+}
+
+.lockedContents{
+    filter: blur(1px);
+    opacity: .80;
+}
+
+.lockBadge{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 6px 14px;
+
+    border-radius: 999px;
+
+   
+    color: #ffe4a4;
+    font-weight: 600;
+    font-size: 14px;
+}
