@@ -1,0 +1,25 @@
+.lockedWrapper{
+    position:relative;
+}
+
+.lockedContent{
+    filter:blur(8px);
+    pointer-events:none;
+    user-select:none;
+    opacity:.4;
+}
+
+.lockOverlay{
+    width:100%;
+    min-height:500px;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:80px 20px;
+}

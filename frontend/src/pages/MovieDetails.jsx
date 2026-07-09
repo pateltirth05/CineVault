@@ -9,10 +9,14 @@ import LandingFooter from '../components/public/LandingFooter'
 import MovieHero from '../components/MovieHero'
 import "../style/style.css"
 import "../style/moviedetails.css"
+import MovieTabs from '../components/MovieTabs'
+import LockedMovieContent from '../components/public/LockedMovieContent'
 const MovieDetails = () => {
   const {id}=useParams()
   const [movie,setMovie]=useState(null)
   const {user}=useAuth()
+
+  const [activeTab,setActiveTab]=useState("overview")
   useEffect(()=>{
     const fetchMovie=async()=>{
       try {
@@ -29,6 +33,22 @@ const MovieDetails = () => {
    <>
    {user ? <Appnavbar/> :<Landingnavbar/>}
    {movie && <MovieHero movie={movie}/>}
+  <div className="container detailBody">
+    <MovieTabs activeTab={activeTab} setActiveTab={setActiveTab} />
+
+    {user ? (
+        <>
+            {/* Later */}
+            {/* Overview */}
+            {/* Cast */}
+            {/* Reviews */}
+            {/* Media */}
+            {/* Similar */}
+        </>
+    ) : (
+        <LockedMovieContent activeTab={activeTab} />
+    )}
+</div>
    {user ? <AppFooter/> :<LandingFooter/>}
    </>
   )

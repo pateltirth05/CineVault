@@ -7,7 +7,7 @@ const Landingnavbar = () => {
     <>
     <nav class="navbar" id="navbar">
   <div class="navInner">
-    <Link to="/landing" class="navLogo">
+    <Link to="/" class="navLogo">
       <div class="navLogoIcon">🎬</div>
       CineVault
     </Link>
